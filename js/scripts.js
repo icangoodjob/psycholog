@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // FIXED HEADER
 let lastScroll = 0;
-const defaultOffset = 150;
+const defaultOffset = 110;
 const header = document.querySelector('.header');
 
 const scrollPosition = () => window.pageYOffset || document.documentElement.scrollTop;
