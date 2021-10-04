@@ -34,8 +34,6 @@
     font-display: swap;
 }
 
-
-
 * {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -79,7 +77,7 @@ body.apply .full-wrapper {
     -ms-grid-columns: minmax(70px, 150px) 1fr minmax(70px, 300px);
     grid-template-columns: minmax(70px, 150px) 1fr minmax(70px, 300px);
     grid-auto-rows: auto 1fr auto;
-    grid-template-areas: 
+        grid-template-areas: 
     "header header header"
     "main main main"
     "footer footer footer";
@@ -179,7 +177,9 @@ header.root {
 }
 
 header.root.hide {
-    transform: translateY(-104px);
+    -webkit-transform: translateY(-104px);
+        -ms-transform: translateY(-104px);
+            transform: translateY(-104px);
 }
 
 body.apply header.root {
@@ -214,7 +214,9 @@ header.root .header-container {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    flex: 1 1 auto;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
 }
 header.root .apply {
     padding-left: 30px;
@@ -235,9 +237,16 @@ header.root .logo__name{
     font-family: var(--font-family);
     font-size: 22px;
     margin: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 header.root .logo img {
     display: block;
@@ -326,7 +335,9 @@ header.root .menu-toggle svg {
         min-height: 88px;
     }
     header.root.hide {
-        transform: translateY(-88px);
+        -webkit-transform: translateY(-88px);
+            -ms-transform: translateY(-88px);
+                transform: translateY(-88px);
     }
     header.root .menu-nav{
         padding-left: 15px;
@@ -429,7 +440,9 @@ header.root .menu-toggle svg {
         padding: 8px 0;
     }
     header.root.hide {
-        transform: translateY(-68px);
+        -webkit-transform: translateY(-68px);
+            -ms-transform: translateY(-68px);
+                transform: translateY(-68px);
     }
     header.root .logo__name{
         font-size: 18px;
