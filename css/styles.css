@@ -135,6 +135,7 @@ footer{
     --header-bg: rgba(207, 169, 155, .8);
     --footer-bg: rgba(90, 61, 55, 1);
     --footer-bg-2:  rgba(105, 88, 95, 1);
+    --header-bg-2:  rgba(105, 88, 95, .8);
     --body-bg: rgba(208,170,155, .2);
     --beige-bg: rgba(204, 188, 162, .2);
     --hover-color: rgba(159,254,176, 1);
@@ -145,7 +146,7 @@ footer{
     --pale-green: rgba(128, 174, 156, 1);
     --light-green: rgba(80, 200, 120, 1);
     --box-shadow-image: 4px 4px 8px 0px rgba(107, 161, 140, .4);
-    --menu-bg: rgba(203, 170, 155, 1);
+    --menu-bg: rgba(105, 88, 95, 1);
     --title-color: #707070;
     --text-color-white: #fff;
     --hover-detail-color: rgba(25, 209, 137, 1);
@@ -167,20 +168,18 @@ header.root {
     top: 0;
     width: 100%;
     z-index: 50;
-    background-color: var(--header-bg);
+    background-color: var(--header-bg-2);
     padding: 20px 0;
     -webkit-transition: -webkit-transform .3s linear;
     transition: -webkit-transform .3s linear;
     -o-transition: transform .3s linear;
     transition: transform .3s linear;
     transition: transform .3s linear, -webkit-transform .3s linear;
-    min-height: 148px;
+    min-height: 90;
 }
 
 header.root.hide {
-    -webkit-transform: translateY(-148px);
-    -ms-transform: translateY(-148px);
-    transform: translateY(-148px);
+    transform: translateY(-90px);
 }
 
 body.apply header.root {
@@ -192,7 +191,7 @@ header.root a {
     font-size: 20px;
 }
 header.root a:hover {
-    color: var(--hover-color);
+    color: var(--pale-green);
 }
 header.root .main-container {
     display: -webkit-box;
@@ -215,23 +214,29 @@ header.root .header-container {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
+    flex: 1 1 auto;
 }
 header.root .apply {
-    padding-left: 20px;
+    padding-left: 30px;
     font-family: 'Helvetica';
     font-weight: bold;
     font-size: 18px;
 }
 header.root .menu-nav{
-    padding-left: 60px;
+    padding-left: 20px;
+}
+header.root .menu-nav a{
+    font-weight: 500;
 }
 header.root .logo {
-    width: 100px;
     display: block;
 }
 header.root .logo__name{
-    font-family: var(--font-family);
     font-size: 22px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 header.root .logo img {
     display: block;
@@ -241,6 +246,7 @@ header.root nav {
     font-family: 'Helvetica';
     font-weight: 300;
     font-size: 19px;
+    margin-left: auto;
 }
 header.root nav > ul {
     display: -webkit-box;
@@ -254,7 +260,8 @@ header.root nav li {
     font-size: 20px;
 }
 header.root nav li.active a {
-    color: rgb(159,254,176);
+    color: var(--pale-green);
+    font-weight: 500;
 }
 header.root .menu-toggle {
     border: none;
@@ -298,9 +305,6 @@ header.root .menu-toggle svg {
         font-size: 14px;
         margin-left: auto;
     }
-    header.root {
-        padding: 5px 0;
-    }
     header.root .header-container{
         -webkit-box-pack: justify;
         -ms-flex-pack: justify;
@@ -315,22 +319,23 @@ header.root .menu-toggle svg {
         padding-right: 25px;
     }
     header.root {
-        min-height: 118px;
+        min-height: 74px;
     }
     header.root.hide {
-        -webkit-transform: translateY(-118px);
-        -ms-transform: translateY(-118px);
-        transform: translateY(-118px);
+        transform: translateY(-74px);
     }
     header.root .menu-nav{
-        padding-left: 40px;
+        padding-left: 15px;
+    }
+    header.root .logo__name{
+        font-size: 20px;
     }
 }
 @media screen and (max-width: 767px) {
     header.root nav {
         position: fixed;
         left: 0;
-        top: -100%;
+        top: 0;
         width: 100%;
         height: 100%;
         z-index: 100;
@@ -339,19 +344,11 @@ header.root .menu-toggle svg {
         overflow-y: auto;
         margin-left: 0;
         padding: 70px 0 20px;
-        -webkit-transition: all .4s ease 0s;
-        -o-transition: all .4s ease 0s;
-        transition: all .4s ease 0s;
-        -webkit-transform: scale(0);
-        -ms-transform: scale(0);
-        transform: scale(0);
-        -webkit-transform-origin: top right;
-        -ms-transform-origin: top right;
-        transform-origin: top right;
+        display: none;
     }
     .header.root nav:before {
         content: "";
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 0;
         width: 100%;
@@ -359,13 +356,7 @@ header.root .menu-toggle svg {
         background-color: var(--menu-bg);
     }
     header.root nav.active {
-        top: 0;
-        -webkit-transform: scale(1);
-        -ms-transform: scale(1);
-        transform: scale(1);
-        -webkit-transition: all .4s ease 0s;
-        -o-transition: all .4s ease 0s;
-        transition: all .4s ease 0s;
+        display: block;
     }
     header.root nav .close {
         border: none;
@@ -415,26 +406,26 @@ header.root .menu-toggle svg {
     }
     header.root .logo__name{
         font-size: 20px;
+        margin: 0;
     }
     header.root .logo{
-        width: -webkit-max-content;
-        width: -moz-max-content;
-        width: max-content;
         font-size: 22px;
     }
     header.root {
-        padding: 0;
+        padding: 10px 0;
     }
     header.root a{
         font-size: 24px;
     }
     header.root {
-        min-height: 70px;
+        min-height: 60px;
+        padding: 10px 0;
     }
     header.root.hide {
-        -webkit-transform: translateY(-70px);
-        -ms-transform: translateY(-70px);
-        transform: translateY(-70px);
+        transform: translateY(-60px);
+    }
+    header.root .logo__name{
+        font-size: 18px;
     }
 }
 
@@ -476,7 +467,7 @@ header.root .menu-toggle svg {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, .25);
+    background: rgba(0, 0, 0, .1);
 }
 .intro .inner {
     position: relative;
@@ -487,12 +478,11 @@ header.root .menu-toggle svg {
     font-weight: bold;
     max-width: 50%;
 }
-@media screen and (max-width: 1640px) {
-    .intro .inner {
-        font-size: 6vw;
-        line-height: 7vw;
-    }
+.intro .inner {
+    font-size: 6vw;
+    line-height: 7vw;
 }
+
 @media screen and (max-width: 1100px) {
     .intro .main-container {
         padding-bottom: 0;
@@ -512,7 +502,7 @@ header.root .menu-toggle svg {
         height: 80vw;
     }
     .intro:before{
-        background: url('../images/mainpage/main-bg-a.jpg') center 42% / cover no-repeat;
+        background: url('../images/mainpage/main-bg-a.jpg') center 35% / cover no-repeat;
     }
 }
 @media screen and (max-width: 500px) {
@@ -572,7 +562,7 @@ h3 {
     background: rgba(0, 0, 0, .3);
 }
 .experience header:after {
-    content: "";
+    content: none;
     width: 300px;
     height: 300px;
     position: absolute;
@@ -905,6 +895,17 @@ h3 {
 .about__list li{
     font-size: 20px;
     line-height: 26px;
+    position: relative;
+    padding-left: 30px;
+}
+.about__list li:before{
+    content: "";
+    position: absolute;
+    top: 13px;
+    left: 0;
+    width: 20px;
+    height: 2px;
+    background: var(--pale-green);
 }
 .about__list li:not(:last-child){
     margin: 0 0 5px;
@@ -964,6 +965,9 @@ h3 {
     .about__list li{
         font-size: 16px;
         line-height: 22px;
+    }
+    .about__list li:before{
+        top: 10px;
     }
 }
 @media screen and (max-width: 900px) {
@@ -1059,7 +1063,7 @@ footer a {
     transition: all .2s ease 0s;
 }
 footer a:hover {
-   color: var(--hover-color);
+ color: var(--pale-green);
 }
 footer .contacts {
     font-size: 20px;
@@ -1092,7 +1096,7 @@ footer .contacts span {
     margin-bottom: 0.5em
 }
 footer .location {
-    max-width: 400px;
+    max-width: 475px;
     font-size: 20px;
     line-height: 22px;
     background: url('../images/icons/place.svg') no-repeat left top;
@@ -1110,9 +1114,6 @@ footer .social {
     position: absolute;
     right: 0;
     top: 0;
-}
-footer .social a {
-
 }
 footer .social a img {
     display: block;
