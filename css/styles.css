@@ -248,6 +248,9 @@ header.root .logo__name{
     -ms-flex-align: center;
     align-items: center;
 }
+header.root .logo__name span{
+    font-family: var(--font-family);
+}
 header.root .logo img {
     display: block;
     width: 100%;
