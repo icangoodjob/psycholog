@@ -6,7 +6,6 @@
     font-style: normal;
     font-display: swap;
 }
-
 @font-face {
     font-family: 'Helvetica';
     src: url('../fonts/HelveticaNeueCyr-Light.woff2') format('woff2'),
@@ -15,7 +14,6 @@
     font-style: normal;
     font-display: swap;
 }
-
 @font-face {
     font-family: 'Helvetica';
     src: url('../fonts/HelveticaNeueCyr-Roman.woff2') format('woff2'),
@@ -32,7 +30,6 @@
     font-style: normal;
     font-display: swap;
 }
-
 @font-face {
     font-family: 'HelveticaNeueCyr';
     src: url('../fonts/HelveticaNeueCyr-Heavy.woff2') format('woff2'),
@@ -159,7 +156,6 @@ footer{
     --hover-detail-color: rgba(25, 209, 137, 1);
 }
 /*<=========================ПЕРЕМЕННЫЕ======================================*/
-
 
 body{
     background-color: var(--beige-bg);
